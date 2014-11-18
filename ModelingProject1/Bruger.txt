@@ -1,0 +1,21 @@
+﻿Vores app skal indeholde attraktioner i Roskilde.
+Attraktioner skal være grupperet.
+
+fx. 
+
+Underholdning & Spisesteder, Kultur, 
+
+
+Brugeren skal kunne oprette en bruger, hvor bruger skal udfylde e-mail, køn, fødselsår, Password, 
+
+
+
+Settingsflyout:
+
+http://msdn.microsoft.com/en-us/library/windows/apps/hh465302.aspx
+
+http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh872190.aspx
+
+http://stackoverflow.com/questions/15043352/windows-8-metro-app-making-a-settings-flyout
+
+http://msdn.microsoft.com/en-us/library/windows/apps/bg182878.aspx#SettingsFlyout
