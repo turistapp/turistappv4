@@ -25,14 +25,12 @@ namespace Turistapp4.View
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private MainViewModel vm;
-
         public MainPage()
         {
             this.InitializeComponent();
-            vm = new MainViewModel();
-            DataContext = vm;
-            SelectionBox.SelectedIndex = 0;
+            //vm = new MainViewModel();
+            //DataContext = vm;
+           SelectionBox.SelectedIndex = -1;
 
 
             Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView().CommandsRequested +=
@@ -89,13 +87,12 @@ namespace Turistapp4.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage2));
+           this.Frame.Navigate(typeof(ItemsPage2));
           
         }
 
-        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MainViewModel.SelectedKategori = vm.Kategoriviser[SelectionBox.SelectedIndex];
            // SelectedImage.Source = new BitmapImage(new Uri(MainViewModel.SelectedKategori.Billede1));
 
         }

@@ -44,9 +44,9 @@ namespace Turistapp4.Model
             _billede2 = billede2;
         }
 
-        public Kategori(string p)
+        public Kategori(string navn)
         {
-            this.p = p;
+            this._navn = navn;
         }
 
         public override string ToString()

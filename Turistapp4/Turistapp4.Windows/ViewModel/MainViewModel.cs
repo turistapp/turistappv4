@@ -12,20 +12,20 @@ using Turistapp4.Model;
 
 namespace Turistapp4.ViewModel
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         private Kategori underholdning = new Kategori("Underholdning");
         private Kategori kultur = new Kategori("Kultur");
         private Kategori musik = new Kategori("Musik");
-        private Kategori spisesteder = new Kategori("Spisesteder");
-        private ObservableCollection<Kategori> kategoriviser;
+        public Kategori spisesteder = new Kategori("Spisesteder");
+        public ObservableCollection<Kategori> kategoriviser;
 
 
         public MainViewModel()
         {
             kategoriviser = new ObservableCollection<Kategori>();
             kategoriviser.Add(underholdning);
-
+           
             kategoriviser.Add(kultur);
 
             kategoriviser.Add(musik);
@@ -37,7 +37,11 @@ namespace Turistapp4.ViewModel
         public ObservableCollection<Kategori> Kategoriviser
         {
             get { return kategoriviser; }
-            set { kategoriviser = value; }
+            set
+            {
+                kategoriviser = value;
+                OnPropertyChanged("Kategoriviser");
+            }
         }
 
         public Kategori Underholdning
@@ -80,6 +84,8 @@ namespace Turistapp4.ViewModel
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
     }
 
 }

@@ -4,7 +4,7 @@
     xmlns:local="using:Turistapp4"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ViewModel="using:Turistapp4.ViewModel"
+    xmlns:Viewmodel ="using:Turistapp4.ViewModel"
     x:Class="Turistapp4.View.MainPage"
     mc:Ignorable="d">
     <Page.BottomAppBar>
@@ -17,6 +17,9 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource AppBarItemForegroundThemeBrush}">
+        <Grid.DataContext>
+            <Viewmodel:MainViewModel/>
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="137*"/>
@@ -24,9 +27,9 @@
         </Grid.RowDefinitions>
         <Button x:Name="signinBtn" Content="Sign In" HorizontalAlignment="Left" Margin="898,33,0,39" VerticalAlignment="Stretch" Width="151" Background="Black" BorderBrush="#FF040101"/>
         <SearchBox FocusOnKeyboardInput="True" HorizontalAlignment="Left" Margin="1116,36,0,0" VerticalAlignment="Top" Height="42" Width="227" FontSize="21.333" PlaceholderText="Søg" QuerySubmitted="SearchBox_QuerySubmitted" SuggestionsRequested="SearchBox_SuggestionsRequested"/>
-        <ListBox x:Name="SelectionBox" HorizontalAlignment="Left" Height="366" VerticalAlignment="Top" Width="366" Margin="124,52,0,0" Grid.Row="1" SelectionChanged="Selector_OnSelectionChanged" ItemsSource="{Binding Kategoriviser}"/>
+        <ListBox x:Name="SelectionBox" HorizontalAlignment="Left" Height="366" VerticalAlignment="Top" Width="366" Margin="124,52,0,0" Grid.Row="1" SelectionChanged="Selector_OnSelectionChanged" ItemsSource="{Binding Kategoriviser}" Background="#FFE4DADA" BorderBrush="White" SelectedItem="{Binding SelectedKategori, Mode=TwoWay}"/>
         <Button x:Name="Næsteknap" Content="Næste" HorizontalAlignment="Left" Margin="212,452,0,0" Grid.Row="1" VerticalAlignment="Top" Height="65" Width="160" FontSize="32" BorderBrush="Black" Click="Button_Click" Foreground="#FF0A0A0A"/>
-        <Image x:Name="SelectedImage" HorizontalAlignment="Left" Height="355" Margin="722,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="496"/>
+        <Image x:Name="SelectedImage" HorizontalAlignment="Left" Height="355" Margin="678,42,0,0" VerticalAlignment="Top" Width="496" Grid.Row="1"/>
         <Image HorizontalAlignment="Left" Height="217" Margin="88,-45,0,0" VerticalAlignment="Top" Width="402" Source="/Assets/roskilde.png" Grid.RowSpan="2"/>
         <Button x:Name="opretbruger" Content="Opret Bruger" HorizontalAlignment="Left" Margin="705,33,0,39" VerticalAlignment="Stretch" Click="opretbruger_Click" Width="151" Background="Black" BorderBrush="#FF040101">
         </Button>
