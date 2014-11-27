@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234233
+using Turistapp4.Model;
+using Turistapp4.ViewModel;
 
 namespace Turistapp4.View
 {
@@ -103,8 +105,9 @@ namespace Turistapp4.View
 
         private void Hej_PointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(item2));
+            Frame.Navigate(typeof(item2));
+        }
         }
 
     }
-}
+

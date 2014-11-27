@@ -13,10 +13,8 @@ namespace Turistapp4.Model
     public class Kategori
     {
         private string _navn;
-        private string _beskrivelse;
         private string _billede1;
         private string _billede2;
-        private string p;
 
         public string Navn
         {
@@ -24,22 +22,23 @@ namespace Turistapp4.Model
             set { _navn = value; }
         }
 
-        public string Beskrivelse
-        {
-            get { return _beskrivelse; }
-            set { _beskrivelse = value; }
-        }
-
         public string Billede1
         {
             get { return _billede1; }
             set { _billede1 = value; }
         }
+        
+        public string Billede2
+        {
+            get { return _billede2; }
+            set { _billede2 = value; }
+            
+        }
 
-        public Kategori(string navn, string beskrivelse, string billede1, string billede2)
+
+        public Kategori(string navn, string billede1, string billede2)
         {
             _navn = navn;
-            _beskrivelse = beskrivelse;
             _billede1 = billede1;
             _billede2 = billede2;
         }

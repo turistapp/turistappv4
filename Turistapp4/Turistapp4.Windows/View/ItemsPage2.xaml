@@ -63,6 +63,16 @@
             </Setter>
         </Style>
     </Page.Resources>
+    <Page.BottomAppBar>
+        <AppBar Height="91">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+        		<AppBarButton x:Name="tilbageappbar" Icon="Back" Label="Tilbage" Height="87" Width="100">
+        			<AppBarSeparator Height="100" Width="100"/>
+        		</AppBarButton>
+        		<AppBarButton x:Name="afslutappbar" Icon="Cancel" Label="Afslut" Margin="100,0,0,0"/>
+        	</Grid>
+        </AppBar>
+    </Page.BottomAppBar>
 
     <!--
         This grid acts as a root panel for the page that defines two rows:
@@ -87,16 +97,26 @@
 			AutomationProperties.AutomationId="ItemsGridView"
 			AutomationProperties.Name="Items"
 			TabIndex="1"
-			Grid.RowSpan="3"
+			Grid.RowSpan="2"
 			Padding="116,136,116,46"
 			SelectionMode="None"
-			IsSwipeEnabled="false" Margin="-10,30,10,-30" SelectionChanged="itemGridView_SelectionChanged" RenderTransformOrigin="0.412,0.365" Style="{StaticResource GridViewStyle1}">
+			IsSwipeEnabled="false" SelectionChanged="itemGridView_SelectionChanged" RenderTransformOrigin="0.412,0.365" Style="{StaticResource GridViewStyle1}" Background="White">
             <GridView.DataContext>
                 <ViewModel:MainViewModel/>
             </GridView.DataContext>
-            <Image x:Name="Hej" Height="281" Width="281" RenderTransformOrigin="0.5,0.5" Source="/Assets/Pop.jpg" Tag="Hej" ToolTipService.ToolTip="" Margin="0" PointerPressed="Hej_PointerPressed"/>
-            <Image Height="304" Width="282" Source="/Assets/Pop.jpg" Margin="0"/>
-            <Image Height="283" Width="283" Source="/Assets/Pop.jpg" NineGrid="0" Margin="0"/>
+            <Image x:Name="Billede1" Height="281" Width="281" RenderTransformOrigin="0.5,0.5" Source="/Assets/Pop.jpg" Tag="Hej" ToolTipService.ToolTip="" Margin="0" PointerPressed="Hej_PointerPressed"/>
+            <Image x:Name="Billede2" Height="304" Width="282" Source="/Assets/Pop.jpg" Margin="0"/>
+            <Image x:Name="Billede3" Source="/Assets/Pop.jpg" NineGrid="0" Height="283" Width="283"/>
+            <AppBar>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+                </Grid>
+            </AppBar>
         </GridView>
 
         <!-- Back button and page title -->
@@ -111,12 +131,11 @@
 				AutomationProperties.Name="Back"
 				AutomationProperties.AutomationId="BackButton"
 				AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding SelectedKategori.Navn}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40">
-                <TextBlock.DataContext>
-                    <ViewModel:MainViewModel/>
-                </TextBlock.DataContext>
-            </TextBlock>
+            <Button x:Name="signin" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="opretbruger_Click" Width="151" Background="Black" BorderBrush="#FF040101" Grid.Column="1" Margin="1042,45,0,47" Content="Log Ind"/>
+            <TextBlock x:Name="pageTitle" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+				IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,726,40"/>
+            <Button x:Name="opretbruger" Content="Opret Bruger" HorizontalAlignment="Left" VerticalAlignment="Stretch" Click="opretbruger_Click" Width="151" Background="Black" BorderBrush="#FF040101" Grid.Column="1" Margin="849,45,0,47" RenderTransformOrigin="0.523,0.604"/>
+            <Path Grid.Column="1" Data="M1136,40 L1136,140" Fill="Black" HorizontalAlignment="Left" Height="60" Margin="1020,40,0,0" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" VerticalAlignment="Top" Width="1"/>
         </Grid>
     </Grid>
 </Page>

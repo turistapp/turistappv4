@@ -14,10 +14,12 @@ namespace Turistapp4.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+
+
         private Kategori underholdning = new Kategori("Underholdning");
         private Kategori kultur = new Kategori("Kultur");
         private Kategori musik = new Kategori("Musik");
-        public Kategori spisesteder = new Kategori("Spisesteder");
+        private Kategori spisesteder = new Kategori("Spisesteder");
         public ObservableCollection<Kategori> kategoriviser;
 
 
@@ -31,7 +33,6 @@ namespace Turistapp4.ViewModel
             kategoriviser.Add(musik);
 
             kategoriviser.Add(spisesteder);
-
         }
 
         public ObservableCollection<Kategori> Kategoriviser
@@ -75,7 +76,7 @@ namespace Turistapp4.ViewModel
           return string.Format("Underholdning: {0}, Kultur: {1}, Musik: {2}, Spisesteder: {3}", underholdning, kultur, musik, spisesteder);
        }
 
-
+    
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

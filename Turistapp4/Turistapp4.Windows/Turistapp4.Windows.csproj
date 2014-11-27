@@ -113,6 +113,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Model\Kategori.cs" />
+    <Compile Include="Model\Kategori1.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="View\item2.xaml.cs">
       <DependentUpon>item2.xaml</DependentUpon>

@@ -93,7 +93,7 @@ namespace Turistapp4.View
 
         public void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           // SelectedImage.Source = new BitmapImage(new Uri(MainViewModel.SelectedKategori.Billede1));
+          //SelectedImage.Source = new BitmapImage(new Uri(MainViewModel.SelectedKategori.Billede1));
 
         }
 
